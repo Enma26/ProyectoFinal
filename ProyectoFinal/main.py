@@ -1,3 +1,36 @@
+#importo la libreria sqlite3 para la base de datos
+import sqlite3 as sql
+
+#creo la base de datos que contiene la tabla de usuarios y productos
+def createdb(DatabaseName):
+    conn =sql.connect(DatabaseName)
+    conn.commit()
+    conn.close()
+#creo la tabla de inventario que contiene los productos
+def createTable():
+    conn = sql.connect('ProyectoFinal/Users&Stock.db')
+    cursor = conn.cursor()
+    cursor.execute(
+        '''CREATE TABLE inventario (
+            name TEXT,
+            price FLOAT,
+            stock FLOAT
+        )'''
+    )
+    conn.commit()
+    conn.close()
+def createTableUsers():
+    conn = sql.connect('ProyectoFinal/Users&Stock.db')
+    cursor = conn.cursor()
+    cursor.execute(
+        '''CREATE TABLE users (
+            name TEXT,
+            password TEXT,
+            type TEXT
+        )'''
+    )
+    conn.commit()
+    conn.close()
 def userRequest(x):
     if x==1:
         print("Bienvenido cliente")
@@ -30,4 +63,7 @@ def main():
     usuario = int(input("Ingrese tipo de usuario: "))
     userRequest(usuario)
 if __name__ == "__main__":
+    #createdb('ProyectoFinal/Users&Stock.db')
+    #createTable()
+    createTableUsers()
     main()
