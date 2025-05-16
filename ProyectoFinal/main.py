@@ -110,8 +110,7 @@ def main():
     print("Bienveniado al sistema de gestión de inventario")
     print("1. Cliente")
     print("2. Administrador")
-    print("3. Nuevo usuario")
-    print("4. Salir")
+    print("3. Salir")
     usuario = int(input("Ingrese tipo de usuario: "))
     userRequest(usuario)
 if __name__ == "__main__":
