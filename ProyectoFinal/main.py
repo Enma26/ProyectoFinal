@@ -217,10 +217,9 @@ def main():
                 userRequest(1)
             elif tipo == "admin":
                 userRequest(2)
-delateProduct("zanahoria")
-#if __name__ == "__main__":
+
+if __name__ == "__main__":
     #createdb('ProyectoFinal/Users&Stock.db')
     #createTable()
     #createTableUsers()
-    
-    #main()
+    main()
