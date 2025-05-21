@@ -2,7 +2,7 @@
 import sqlite3 as sql
 import os
 
-#creo la base de datos que contiene la tabla de usuarios y productos
+#crea la base de datos que contiene la tabla de usuarios y productos
 def createdb(DatabaseName):
     if os.path.exists(DatabaseName):
         print(f"Database '{DatabaseName}' already exists. Skipping creation.")
@@ -11,6 +11,7 @@ def createdb(DatabaseName):
     conn.commit()
     conn.close()
 
+#elimina un producto de la base de datos
 def delateProduct(name):
     conn = sql.connect('ProyectoFinal/Users&Stock.db')
     cursor = conn.cursor()
